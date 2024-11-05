@@ -1,0 +1,174 @@
+/* ----------------------------- */
+/* Home Page Styles              */
+/* ----------------------------- */
+.home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    /* 배경 이미지 설정 */
+    background-image: url('../assets/images/background.png');
+    background-size: 100% 40%; /* 아래 배경 너비100 높이40퍼만 덮도록*/
+    background-position: bottom;
+    background-repeat: no-repeat; 
+}
+ 
+/* ----------------------------- */
+/*      Welcome, partner         */
+/* ----------------------------- */
+.prompt-box {
+    width: 100%;                /* 전체 너비 사용 */
+    max-width: 900px;           /* 질문창과 최대 너비 맞춤 */
+    height: auto;
+    border: 1px solid #d3d3d3;
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 30px 0px;         /* 패딩을 늘려 내부 여백 확대 */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;     /* 내부 요소를 수직 정렬 */
+    align-items: center;        /* 중앙 정렬 */
+    text-align: center;
+    margin-bottom: 100px;       /* 카테고리 위 마진 */
+    background-image: url('../assets/images/background.png');
+    background-size: 60%;           /* 이미지 크기를 박스의 60%로 설정 */
+    background-position: center top; /* 이미지가 중앙 하단에 위치하도록 설정 */
+    background-repeat: no-repeat;
+}
+
+/* ----------------------------- */
+/* Title and Paragraph Styles     */
+/* ----------------------------- */
+.top-part {
+    max-width: 600px;
+  }
+.title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 130%;
+    color: #19213d;
+}
+.paragraph {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: #666f8d;
+    margin-top: 6px;
+}
+  
+/* ----------------------------- */
+/* Categories Styles              */
+/* ----------------------------- */
+.apps-wrapper {
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+}
+.categories-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 130%;
+    color: #19213d;
+    margin-bottom: 16px;
+}
+.categories-grid {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+}
+.category-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    border: 1px solid #f0f2f5;
+    padding: 16px;
+    width: 160px;
+    text-align: left;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* 기본 그림자 */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+/* 카드 호버 시 효과 */
+.category-card:hover {
+    transform: translateY(-4px); /* 마우스를 올렸을 때 카드가 살짝 올라감 */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* hover 시 더 진한 그림자 */
+}
+.category-icon {
+    width: 27px;
+    height: 27px;
+    margin-bottom: 16px;
+}
+.category-name {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 130%;
+    color: #19213d;
+    margin-bottom: 6px;
+}
+.category-description {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: #666f8d;
+    height: 84px;
+    overflow: hidden;
+}
+ 
+/* ----------------------------- */
+/* Explore Link Styles            */
+/* ----------------------------- */
+.explore-link {
+    display: flex;
+    align-items: center;
+    color: #2388ff;
+    margin-top: 12px;
+}
+.arrow-icon {
+    margin-left: 6px;
+    width: 16px;
+    height: 16px;
+}
+
+/* ----------------------------- */
+/* Prompt Box Input Styles        */
+/* ----------------------------- */
+.prompt-box-bottom {
+    display: flex;
+    align-items: center;
+    padding: 6px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+    background-color: #ffffff;
+    border: 1px solid #f0f2f5;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 900px;
+    margin-top: 40px;
+}
+.prompt-input {
+    flex: 1;
+    border: none;
+    padding: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: #666f8d;
+    outline: none;
+}
+.primary-button {
+    display: flex;
+    align-items: center;       /* 수직 중앙 정렬 */
+    justify-content: center;    /* 수평 중앙 정렬 */
+    background: linear-gradient(180deg, rgba(43,122,251,1) 0%, rgba(33,116,253,1) 100%);
+    border: none;
+    border-radius: 6px;
+    padding: 8px;
+    cursor: pointer;
+}
+.send-icon {
+    width: 15px;
+    height: 15px;
+    margin-left: 5px;      /* 센터가 안 맞아서 계속 수정 */
+}
