@@ -1,0 +1,25 @@
+/* App.css */
+
+/* 페이지 공통 스타일 */
+.root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    background-image: url('./assets/images/background.png');
+    background-size: 100% 40%;
+    background-position: bottom;
+    background-repeat: no-repeat;
+}
+
+/* 큰 화면에서 배경 이미지와 패딩 조정 */
+@media (min-width: 1440px) {
+    .root {
+        padding: 60px;
+        background-size: 100% 30%;
+    }
+}

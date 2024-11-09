@@ -1,0 +1,40 @@
+/* ChatInput.css */
+
+.chat-input-wrapper {
+    display: flex;
+    align-items: center;
+    padding: 6px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+    background-color: #ffffff;
+    border: 1px solid #f0f2f5;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 900px;
+}
+
+.chat-input {
+    flex: 1;
+    border: none;
+    padding: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: #666f8d;
+    outline: none;
+}
+
+.send-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg, rgba(43,122,251,1) 0%, rgba(33,116,253,1) 100%);
+    border: none;
+    border-radius: 6px;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.send-icon {
+    width: 15px;
+    height: 15px;
+    margin-left: 5px;
+}

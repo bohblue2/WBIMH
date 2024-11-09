@@ -1,0 +1,64 @@
+/* Categories Styles */
+.category-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    border: 1px solid #f0f2f5;
+    padding: 16px;
+    width: 160px;
+    text-align: left;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* categories-grid Flexbox 설정 */
+.categories-grid {
+    display: flex;
+    gap: 24px;            /* 카드 간의 간격 */
+    flex-wrap: wrap;      /* 화면 크기에 따라 줄바꿈 허용 */
+    justify-content: center; /* 가로 중앙 정렬 */
+}
+
+/* 카드 호버 효과 */
+.category-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.category-icon {
+    width: 27px;
+    height: 27px;
+    margin-bottom: 16px;
+}
+
+.category-name {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 130%;
+    color: #19213d;
+    margin-bottom: 6px;
+}
+
+.category-description {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: #666f8d;
+    height: 84px;
+    overflow: hidden;
+}
+
+/* Explore Link Styles */
+.explore-link {
+    display: flex;
+    align-items: center;
+    color: #2388ff;
+    margin-top: 12px;
+}
+
+.arrow-icon {
+    margin-left: 6px;
+    width: 16px;
+    height: 16px;
+}

@@ -1,0 +1,22 @@
+/* src/components/CHAT/ChatBody.css */
+.chat-body {
+    width: 100%;
+    flex: 1;
+    background-color: transparent; /* 투명 배경 유지 */
+    padding: 20px;
+    overflow-y: auto; /* 스크롤은 동작하도록 유지 */
+    max-height: 600px;
+    scrollbar-width: none; /* Firefox에서 스크롤바 숨기기 */
+    -ms-overflow-style: none; /* IE와 Edge에서 스크롤바 숨기기 */
+}
+
+/* Chrome, Safari에서 스크롤바 숨기기 */
+.chat-body::-webkit-scrollbar {
+    display: none;
+}
+
+.chat-message {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #f0f2f5;
+    padding: 10px 0;
+}
