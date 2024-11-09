@@ -1,0 +1,11 @@
+/* Chat.css */
+.chat-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: 719px; /* Home과 동일한 최소 높이 설정 */
+  max-width: 850px; /* Home과 동일한 최대 너비 설정 */
+  margin: 0 auto; /* 화면 가운데 정렬 */
+}
+

@@ -1,0 +1,30 @@
+.user-message {
+    text-align: left;
+}
+
+.chat-top {
+    display: flex;
+    align-items: center;
+    font-size: 14px; /* 일관된 폰트 크기 */
+    font-family: 'Inter', sans-serif; /* 일관된 폰트 패밀리 */
+    color: #666f8d;
+}
+
+.chat-name {
+    font-weight: 600;
+    color: #19213d;
+    margin-right: 10px; /* 이름과 시간 사이 간격 */
+}
+
+.chat-time {
+    color: #666f8d;
+    white-space: nowrap; /* 시간이 붙지 않도록 설정 */
+    font-size: 12px; /* 시간이 더 작게 보이도록 조정 */
+}
+
+.chat-content {
+    margin-top: 5px;
+    font-family: 'Inter', sans-serif; /* 일관된 폰트 패밀리 */
+    color: #666f8d;
+    line-height: 1.5;
+}
