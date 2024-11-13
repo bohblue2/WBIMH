@@ -10,7 +10,7 @@ import ChatInput from './ChatInput';
 const Chat = () => {
   const location = useLocation();
   const [messages, setMessages] = useState([]);
-  const [title, setTitle] = useState(location.state?.title || 'Default Title');
+  const [title, setTitle] = useState(location.state?.title || 'WBIMH');
 
   useEffect(() => {
     if (location.state?.question) {
@@ -31,14 +31,23 @@ const Chat = () => {
 
   const handleAPICall = async (messageToSend) => {
     try {
-      // 메시지를 서버에 전송하여 요약된 제목과 봇 응답을 받음
-      const response = await axios.post(`${process.env.REACT_APP_API_URL}/getResponse`, { message: messageToSend });
-      
-      // 봇 응답 메시지 설정
+      // FastAPI 서버에 맞춘 엔드포인트와 요청 데이터 구조
+      const response = await axios.post(
+        `${process.env.REACT_APP_API_URL}/api/chat/completion`,
+        {
+          model: "gpt-3.5-turbo",
+          messages: [{ role: "user", content: messageToSend }],
+          max_tokens: 150,
+          temperature: 0.7,
+        },
+        { headers: { "Content-Type": "application/json" } }
+      );
+  
+      // FastAPI 응답에서 'content' 사용
       const botMessage = {
         type: 'bot',
         time: new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' }),
-        content: response.data.reply,
+        content: response.data.content, // FastAPI 응답의 content 필드 사용
       };
 
       // 서버 응답에서 요약된 제목이 있을 경우, title 상태 업데이트
