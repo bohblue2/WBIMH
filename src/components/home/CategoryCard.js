@@ -1,4 +1,4 @@
-// src/components/HOME/CategoryCard.js
+// src/components/home/CategoryCard.js
 import React from 'react';
 import './CategoryCard.css';
 import ArrowIcon from '../../assets/icons/arrow.svg';
