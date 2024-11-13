@@ -1,4 +1,4 @@
-// src/components/HOME/Home.js
+// src/components/home/Home.js
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Home.css';
@@ -22,7 +22,7 @@ function Home() {
       </div>
 
       <div className="apps-wrapper">
-        <h2 className="categories-title">Top categories</h2>
+        <h2 className="categories-title">Trending Queries</h2>
         <div className="categories-grid">
           <CategoryCard
             iconUrl={require('../../assets/icons/calender.svg')}

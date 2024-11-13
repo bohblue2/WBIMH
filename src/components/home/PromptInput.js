@@ -1,4 +1,4 @@
-// src/components/HOME/PromptInput.js
+// src/components/home/PromptInput.js
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './PromptInput.css';
