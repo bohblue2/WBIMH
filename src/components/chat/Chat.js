@@ -31,18 +31,29 @@ const Chat = () => {
 
   const handleAPICall = async (messageToSend) => {
     try {
-      // FastAPI 서버에 맞춘 엔드포인트와 요청 데이터 구조
+      // 이전 메시지들을 포함한 메시지 배열 생성
+      const messageHistory = messages.map(msg => ({
+        role: msg.type === 'user' ? 'user' : 'assistant',
+        content: msg.content
+      }));
+
+      // 새로운 메시지 추가
+      messageHistory.push({
+        role: 'user',
+        content: messageToSend
+      });
+
       const response = await axios.post(
         `${process.env.REACT_APP_API_URL}/api/chat/completion`,
         {
           model: "gpt-3.5-turbo",
-          messages: [{ role: "user", content: messageToSend }],
+          messages: messageHistory,
           max_tokens: 150,
           temperature: 0.7,
         },
         { headers: { "Content-Type": "application/json" } }
       );
-  
+    
       // FastAPI 응답에서 'content' 사용
       const botMessage = {
         type: 'bot',
@@ -50,12 +61,12 @@ const Chat = () => {
         content: response.data.content, // FastAPI 응답의 content 필드 사용
       };
 
+      setMessages((prevMessages) => [...prevMessages, botMessage]);
+
       // 서버 응답에서 요약된 제목이 있을 경우, title 상태 업데이트
       if (response.data.summary) {
         setTitle(response.data.summary);
       }
-
-      setMessages((prevMessages) => [...prevMessages, botMessage]);
     } catch (error) {
       console.error('Error fetching bot response:', error);
     }
