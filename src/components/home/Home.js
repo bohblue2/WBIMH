@@ -16,8 +16,8 @@ function Home() {
     <div className="home">
       <div className="prompt-box">
         <div className="top-part">
-          <h1 className="title">Welcome, partner</h1>
-          <p className="paragraph">Let’s make informed choices together!</p>
+          <h1 className="title">환영합니다, 주식 시장에 대해 물어봐주세요.</h1>
+          <p className="paragraph">Service Status: Online</p>
         </div>
       </div>
 
@@ -26,26 +26,26 @@ function Home() {
         <div className="categories-grid">
           <CategoryCard
             iconUrl={require('../../assets/icons/calender.svg')}
-            title="Apple, Intel 실적 발표"
-            description="11월 1일 오전 6시에 Apple과 Intel의 실적 발표가 예정돼 있어요. 이번 실적 발표가 주가에 어떤 영향을 줄까요?"
+            title="코닉오토메이션"
+            description="코닉오토메이션에 대해 알려주세요."
             onExploreClick={onExploreClick}
           />
           <CategoryCard
             iconUrl={require('../../assets/icons/plane.svg')}
-            title="중국 관광객 감소"
-            description="Eros in cursus turpis massa morbi tristique senectus etole netus et conserter"
+            title="유밥"
+            description="유밥 회사가 어떤 대표를 선임했는지 알려주세요."
             onExploreClick={onExploreClick}
           />
           <CategoryCard
             iconUrl={require('../../assets/icons/search.svg')}
-            title="한국의 방산주"
-            description="Eros in cursus turpis massa morbi tristique senectus etole netus et conserter"
+            title="신성델타테크"
+            description="신성델타테크가 상한가 간 이유를 알려주세요."
             onExploreClick={onExploreClick}
           />
           <CategoryCard
             iconUrl={require('../../assets/icons/bank.svg')}
-            title="미국의 금리 인하"
-            description="Tristique senectus et netus et malesuada fames turpis egestas consetuter"
+            title="CJ올리브네트웍스"
+            description="CJ올리브네트웍스의 최근 행보에 대해 알려주세요."
             onExploreClick={onExploreClick}
           />
         </div>
