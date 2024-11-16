@@ -10,7 +10,7 @@ import ChatInput from './ChatInput';
 const Chat = () => {
   const location = useLocation();
   const [messages, setMessages] = useState([]);
-  const [title, setTitle] = useState(location.state?.title || 'WBIMH');
+  const [title, setTitle] = useState(location.state?.title || '채팅방');
 
   useEffect(() => {
     if (location.state?.question) {

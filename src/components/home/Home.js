@@ -12,42 +12,49 @@ function Home() {
     navigate('/chat', { state: { question: description, title: title } });
   };
 
+  const [recommendedQuestions, setRecommendedQuestions] = React.useState([]);
+
+  React.useEffect(() => {
+    const fetchRecommendedQuestions = async () => {
+      try {
+        const response = await fetch('http://localhost:8080/recommendation/asks?k=4');
+        const data = await response.json();
+        setRecommendedQuestions(data.questions);
+      } catch (error) {
+        console.error('Error fetching recommended questions:', error);
+      }
+    };
+
+    fetchRecommendedQuestions();
+  }, []);
+
+  const renderRecommendedQuestions = () => {
+    return recommendedQuestions.map((question) => (
+      <CategoryCard
+        key={question.id}
+        iconUrl={require('../../assets/icons/calender.svg')}
+        title={question.title}
+        description={question.content}
+        onExploreClick={onExploreClick}
+      />
+    ));
+  };
+
+  let recommendedQuestionsContent = renderRecommendedQuestions()
+  
   return (
     <div className="home">
       <div className="prompt-box">
         <div className="top-part">
-          <h1 className="title">환영합니다, 주식 시장에 대해 물어봐주세요.</h1>
-          <p className="paragraph">Service Status: Online</p>
+          <h1 className="title">환영합니다, 당신은 사랑받기 위해 태어났습니다.</h1>
+          <p className="paragraph">온라인</p>
         </div>
       </div>
 
       <div className="apps-wrapper">
-        <h2 className="categories-title">Trending Queries</h2>
+        <h2 className="categories-title">자주하는 질문</h2>
         <div className="categories-grid">
-          <CategoryCard
-            iconUrl={require('../../assets/icons/calender.svg')}
-            title="코닉오토메이션"
-            description="코닉오토메이션에 대해 알려주세요."
-            onExploreClick={onExploreClick}
-          />
-          <CategoryCard
-            iconUrl={require('../../assets/icons/plane.svg')}
-            title="유밥"
-            description="유밥 회사가 어떤 대표를 선임했는지 알려주세요."
-            onExploreClick={onExploreClick}
-          />
-          <CategoryCard
-            iconUrl={require('../../assets/icons/search.svg')}
-            title="신성델타테크"
-            description="신성델타테크가 상한가 간 이유를 알려주세요."
-            onExploreClick={onExploreClick}
-          />
-          <CategoryCard
-            iconUrl={require('../../assets/icons/bank.svg')}
-            title="CJ올리브네트웍스"
-            description="CJ올리브네트웍스의 최근 행보에 대해 알려주세요."
-            onExploreClick={onExploreClick}
-          />
+          {recommendedQuestionsContent}
         </div>
       </div>
 

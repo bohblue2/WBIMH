@@ -9,7 +9,7 @@ const CategoryCard = ({ iconUrl, title, description, onExploreClick }) => (
     <h3 className="category-name">{title}</h3>
     <p className="category-description">{description}</p>
     <div className="explore-link">
-      <span>Explore</span>
+      <span>질문하기</span>
       <img src={ArrowIcon} alt="arrow" className="arrow-icon" />
     </div>
   </div>
